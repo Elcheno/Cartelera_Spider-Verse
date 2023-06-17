@@ -14,7 +14,7 @@ html{
     /*background-color: rgba(0, 0, 0, 0.99);*/
     background-image: radial-gradient(circle, rgba(66, 66, 66, 0.8), rgb(33, 33, 33), rgba(0, 0, 0));
 
-    /*animation: start-animation 5s;*/
+    animation: start-animation 2s;
 }
 
 .wrapper{
@@ -30,6 +30,25 @@ html{
 
 .header:hover{
     cursor: default;
+}
+
+.logo{
+    z-index: 1;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-image: url("./../img/icons/logo-header-sf.png");
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
+
+.logo:hover{
+    cursor: pointer;
+    animation:rotate-vertical-center 1s;
 }
 
 .header div{
@@ -53,15 +72,6 @@ html{
     animation-delay: calc(var(--scroll) * -1s);
 }
 
-@keyframes scale {
-    0%{
-        transform: scale(1);
-    }
-    20%{
-        transform: scale(3);
-    }
-}
-
 .header .title2 h1{
     width: 100%;
 }
@@ -78,15 +88,6 @@ html{
     animation: scale2 3s linear infinite;
     animation-play-state: paused;
     animation-delay: calc(var(--scroll) * -1s);
-}
-
-@keyframes scale2 {
-    0%{
-        transform: scale(1);
-    }
-    20%{
-        transform: scale(1.7);
-    }
 }
 
 /*.header span:nth-child(even){*/
@@ -135,6 +136,7 @@ article{
     padding: 1.25rem 0.8rem 1.1rem 0.8rem;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
+    transition: box-shadow 0.5s, background-color 0.5s;
 }
 
 article:hover{
@@ -156,10 +158,16 @@ article img{
 
 @keyframes start-animation {
     0%{
-        opacity: 0;
+        opacity: 0.8;
+        filter: blur(50px);
+    }
+    75%{
+        opacity: 0.9;
+        filter: blur(2.5px);
     }
     100%{
         opacity: 1;
+        filter: blur(0px);
     }
 }
 
@@ -167,15 +175,15 @@ article img{
     0%{
         opacity: 0.95;
     }
-    48%{
-        opacity: 0.8;
+    45%{
+        opacity: 0.5;
     }
     50%{
-        opacity: 0.3;
+        opacity: 0.4;
         /*animation:vibrate 0.2s linear both;*/
     }
-    52%{
-        opacity: 0.8;
+    55%{
+        opacity: 0.5;
     }
     100%{
         opacity: 0.95;
@@ -192,6 +200,26 @@ article img{
     }
 }
 
+@keyframes scale2 {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.3);
+    }
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(3);
+    }
+}
+
+@keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+
 @keyframes vibrate{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(-2px,-2px)}60%{transform:translate(2px,2px)}80%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
 
 /* --------------- MEDIA QUERIES --------------- */
@@ -202,7 +230,7 @@ article img{
     }
 
     .header span{
-        font-size: 9rem;
+        font-size: 8rem;
     }
 }
 
@@ -212,7 +240,7 @@ article img{
     }
 
     .header span{
-        font-size: 9rem;
+        font-size: 8rem;
     }
 }
 
@@ -222,6 +250,6 @@ article img{
     }
 
     .header span{
-        font-size: 14rem;
+        font-size: 11rem;
     }
 }
