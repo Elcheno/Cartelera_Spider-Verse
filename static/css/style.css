@@ -106,11 +106,9 @@ html{
 
 article{
     width: fit-content;
-    padding: 0.8rem 0.8rem 1.1rem 0.8rem;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
     transition: box-shadow 0.5s, background-color 0.5s;
-
 }
 
 article:hover{
@@ -242,61 +240,10 @@ footer{
     }
 }
 
-/* --------------- MEDIA QUERIES --------------- */
-
-@media only screen and (max-width: 1399px){
-    .wrapper{
-        background-attachment: fixed;
-    }
-
-    .header span{
-        font-size: 12rem;
-    }
-
-    .container{
-        flex-flow: column;
-        justify-content: center;
-        margin: 2rem 0rem 5rem 0rem;
-        align-items: center;
-    }
-
-    article img{
-        width: max-content;
-        height: max-content;
-    }
-}
-
-@media only screen and (min-width: 1400px) {
-    .wrapper{
-        background-attachment: fixed;
-    }
-
-    .header span{
-        font-size: 11rem;
-    }
-
-    .container{
-        flex-flow: row wrap;
-        justify-content: space-between;
-        margin: 2rem 5rem 5rem 5rem;
-    }
-
-    article img{
-        width: 385px;
-        height: 500px;
-    }
-}
-
-
-
-
- /*------------- ESTO ES EL LIKE -------------*/
+/*------------- ESTO ES EL LIKE -------------*/
 .con-like {
     --red: rgb(255, 50, 100);
     position: relative;
-    width: 40px;
-    height: 40px;
-    margin: 8px auto;
 }
 
 .con-like .like {
@@ -374,3 +321,72 @@ footer{
         display: none;
     }
 }
+
+/* --------------- MEDIA QUERIES --------------- */
+
+@media only screen and (max-width: 1399px){
+    .wrapper{
+        background-attachment: fixed;
+    }
+
+    .header span{
+        font-size: 12rem;
+    }
+
+    .container{
+        flex-flow: column;
+        justify-content: center;
+        margin: 2rem 0rem 5rem 0rem;
+        align-items: center;
+    }
+
+    article{
+        padding: 0.8rem 0.8rem 0rem 0.8rem;
+    }
+
+    article img{
+        width: max-content;
+        height: max-content;
+    }
+
+    .con-like{
+        width: 60px;
+        height: 60px;
+        margin: 50px auto;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .wrapper{
+        background-attachment: fixed;
+    }
+
+    .header span{
+        font-size: 11rem;
+    }
+
+    .container{
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: 2rem 5rem 5rem 5rem;
+    }
+
+    article{
+        padding: 0.8rem 0.8rem 1.1rem 0.8rem;
+    }
+
+    article img{
+        width: 385px;
+        height: 500px;
+    }
+
+    .con-like{
+        width: 40px;
+        height: 40px;
+        margin: 8px auto;
+    }
+}
+
+
+
+
