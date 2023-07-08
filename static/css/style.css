@@ -110,6 +110,7 @@ article{
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
     transition: box-shadow 0.5s, background-color 0.5s;
+
 }
 
 article:hover{
@@ -133,7 +134,6 @@ footer{
     margin-bottom: 5rem;
 }
 
-/* === removing default button style ===*/
 .button {
     margin: 0;
     height: auto;
@@ -142,7 +142,6 @@ footer{
     border: none;
 }
 
-/* button styling */
 .btn-git:hover{
     cursor: pointer;
 }
@@ -160,7 +159,7 @@ footer{
     color: transparent;
     -webkit-text-stroke: 1px var(--text-stroke-color);
 }
-/* this is the text, when you hover on button */
+
 .hover-text {
     position: absolute;
     box-sizing: border-box;
@@ -218,7 +217,7 @@ footer{
         transform: scale(1);
     }
     10%{
-        transform: scale(1.7);
+        transform: scale(1.5);
     }
     20%{
         transform: scale(1);
@@ -234,7 +233,14 @@ footer{
     }
 }
 
-@keyframes rotate-vertical-center{0%{transform:rotateY(0)}100%{transform:rotateY(360deg)}}
+@keyframes rotate-vertical-center{
+    0% {
+        transform:rotateY(0)
+    }
+    100%{
+        transform:rotateY(360deg)
+    }
+}
 
 /* --------------- MEDIA QUERIES --------------- */
 
@@ -278,5 +284,93 @@ footer{
     article img{
         width: 385px;
         height: 500px;
+    }
+}
+
+
+
+
+ /*------------- ESTO ES EL LIKE -------------*/
+.con-like {
+    --red: rgb(255, 50, 100);
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 8px auto;
+}
+
+.con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+    fill: var(--red);
+    position: absolute;
+}
+
+.con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+}
+
+.con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+}
+
+.con-like .like:checked ~ .checkmark .filled {
+    display: block
+}
+
+.con-like .like:checked ~ .checkmark .celebrate {
+    display: block
+}
+
+@keyframes kfr-filled {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes kfr-celebrate {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+        display: none;
     }
 }
